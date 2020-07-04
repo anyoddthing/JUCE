@@ -732,8 +732,10 @@ public:
 
     bool handleKeyEvent (NSEvent* ev, bool isKeyDown)
     {
-        auto unicode = nsStringToJuce ([ev characters]);
         auto keyCode = getKeyCodeFromEvent (ev);
+        auto unicode = keyCode != 32
+            ? nsStringToJuce ([ev characters])
+            : " ";        
 
        #if JUCE_DEBUG_KEYCODES
         DBG ("unicode: " + unicode + " " + String::toHexString ((int) unicode[0]));
