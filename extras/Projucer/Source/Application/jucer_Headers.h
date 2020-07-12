@@ -25,6 +25,8 @@
 
 #pragma once
 
+#define JUCER_ENABLE_GPL_MODE 1
+
 #include <JuceHeader.h>
 #include "jucer_CommonHeaders.h"
 
